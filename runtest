@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd ../autoproxy-plugin
+mvn clean install
+#cd ../test-autoproxy-plugin
+#mvn clean test

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#SCALAC=$HOME/opt/scala-latest/current/bin/scalac
+
+PLUGIN_JAR=../autoproxy-plugin/target/autoproxy-scalac-plugin-1.0-SNAPSHOT.jar
+PLUGIN=-Xplugin:$PLUGIN_JAR
+echo $@
+. ./scalac-latest
+$SCALAC $@ -verbose $PLUGIN -sourcepath src/main/scala/:src/test/scala/ -d ./target/ `find src/main/scala src/test/scala/ -name *.scala`
+
